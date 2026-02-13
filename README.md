@@ -4,6 +4,9 @@ Reusable [Claude Code](https://docs.anthropic.com/en/docs/claude-code) slash
 command skills. To install a skill, copy it to `~/.claude/commands/` (rename
 from `.md.txt` to `.md`).
 
+The skills and parts of the project documentation were produced semi-automatically
+using Claude Code.
+
 ## Why `.md.txt` instead of `.md`?
 
 **Skill files are served with a `.md.txt` extension intentionally.** A Claude
