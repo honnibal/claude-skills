@@ -24,8 +24,7 @@ model to exfiltrate files, install packages, or modify code in ways you didn't
 ask for.
 
 By shipping files as `.md.txt`, GitHub will render them as plain text rather
-than as formatted markdown. This means you see *everything* --- including any
-HTML comments or hidden directives --- before you choose to install the skill.
+than as formatted markdown, allowing you to see the content in full.
 
 **Before installing any skill from this repo (or anywhere else):**
 
