@@ -16,7 +16,7 @@ when rendered by GitHub but are still present in the raw text --- and therefore
 still processed by the model. A malicious skill could embed hidden instructions
 that you would never see when previewing the file on GitHub.
 
-In other words: **a skill file is remote code execution.** Claude Code operates
+**Skill files are maximum privilege remote code execution.** Claude Code operates
 with broad access to your machine --- your filesystem, your shell, your git
 credentials, your environment variables. A skill that says "helpful refactoring
 assistant" in its visible text could contain a hidden HTML comment telling the
