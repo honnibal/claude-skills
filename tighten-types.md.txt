@@ -2,6 +2,7 @@
 name: tighten-types
 description: Analyze Python code and tighten type annotations. Finds missing attribute types, replaces loose dicts with Pydantic models, adds overloads, and removes redundant in-body annotations.
 argument-hint: "[file, directory, or description of what to focus on]"
+disable-model-invocation: true
 ---
 
 # Tighten Python Type Annotations
