@@ -40,6 +40,10 @@ All skills accept an optional argument to scope the work to specific files or
 directories. If no argument is given, they work through the project or ask you
 to choose a starting scope.
 
+The skills are set to `disable-model-invocation: true` by default. This means
+installing them shouldn't pollute your context. You can change this if you want
+the model to invoke them automatically.
+
 ### `tighten-types.md.txt`
 
 Systematically review Python source files and tighten type annotations.
