@@ -5,34 +5,8 @@ command skills. To install a skill, copy it to `~/.claude/commands/` (rename
 from `.md.txt` to `.md`).
 
 The skills and parts of the project documentation were produced semi-automatically
-using Claude Code.
-
-## Why `.md.txt` instead of `.md`?
-
-**Skill files are served with a `.md.txt` extension intentionally.** A Claude
-Code skill is a markdown document that gets injected into the LLM's prompt
-verbatim. Markdown can contain HTML comments (`<!-- ... -->`) that are invisible
-when rendered by GitHub but are still present in the raw text --- and therefore
-still processed by the model. A malicious skill could embed hidden instructions
-that you would never see when previewing the file on GitHub.
-
-**Skill files are maximum privilege remote code execution.** Claude Code operates
-with broad access to your machine --- your filesystem, your shell, your git
-credentials, your environment variables. A skill that says "helpful refactoring
-assistant" in its visible text could contain a hidden HTML comment telling the
-model to exfiltrate files, install packages, or modify code in ways you didn't
-ask for.
-
-By shipping files as `.md.txt`, GitHub will render them as plain text rather
-than as formatted markdown, allowing you to see the content in full.
-
-**Before installing any skill from this repo (or anywhere else):**
-
-1. Read the **raw** file contents. Do not trust a rendered markdown preview.
-2. Look for HTML comments, invisible unicode characters, or instructions that
-   don't match the stated purpose.
-3. Understand that once installed, the skill's full text is handed to an LLM
-   that can execute arbitrary commands on your behalf.
+using Claude Code. You can read more about the general thinking behind these skills
+on [my blog](https://honnibal.dev).
 
 ## Skills
 
@@ -141,6 +115,35 @@ expected exception.
 ```
 /try-except src/mypackage/pipeline.py
 ```
+
+## Why `.md.txt` instead of `.md`?
+
+**Skill files are served with a `.md.txt` extension intentionally.** A Claude
+Code skill is a markdown document that gets injected into the LLM's prompt
+verbatim. Markdown can contain HTML comments (`<!-- ... -->`) that are invisible
+when rendered by GitHub but are still present in the raw text --- and therefore
+still processed by the model. A malicious skill could embed hidden instructions
+that you would never see when previewing the file on GitHub.
+
+**Skill files are maximum privilege remote code execution.** Claude Code operates
+with broad access to your machine --- your filesystem, your shell, your git
+credentials, your environment variables. A skill that says "helpful refactoring
+assistant" in its visible text could contain a hidden HTML comment telling the
+model to exfiltrate files, install packages, or modify code in ways you didn't
+ask for.
+
+By shipping files as `.md.txt`, GitHub will render them as plain text rather
+than as formatted markdown, allowing you to see the content in full.
+
+**Before installing any skill from this repo (or anywhere else):**
+
+1. Read the **raw** file contents. Do not trust a rendered markdown preview.
+2. Look for HTML comments, invisible unicode characters, or instructions that
+   don't match the stated purpose.
+3. Understand that once installed, the skill's full text is handed to an LLM
+   that can execute arbitrary commands on your behalf.
+
+
 
 ## License
 
